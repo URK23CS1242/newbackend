@@ -17,7 +17,10 @@ if (!require('fs').existsSync(uploadDir)) {
 }
 
 // --- Middleware ---
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://iamgroot-214e3.web.app'],
+  credentials: true
+}));
 
 // Additional security headers
 app.use((req, res, next) => {
