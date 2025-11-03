@@ -24,7 +24,6 @@ app.use(cors({
 
 // Additional security headers
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   if (req.method === 'OPTIONS') {
@@ -151,7 +150,7 @@ app.get('/api/blinks', async (req, res) => {
       const obj = b.toObject();
       // Construct full URL for media if it exists
       if (obj.mediaUrl) {
-        obj.mediaDataUrl = `${process.env.BACKEND_URL || 'https://backend-0s60.onrender.com'}/uploads/${obj.mediaUrl}`;
+        obj.mediaDataUrl = `${process.env.BACKEND_URL || 'https://newbackend-9u98.onrender.com'}/uploads/${obj.mediaUrl}`;
       }
       return obj;
     });
